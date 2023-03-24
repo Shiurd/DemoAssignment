@@ -24,15 +24,20 @@ public class HibernateUlti {
         properties.put(Environment.SHOW_SQL, "true");
 
         conf.setProperties(properties);
-//        conf.addAnnotatedClass(DongVat.class);
         conf.addAnnotatedClass(KhachHang.class);
-      //  conf.addAnnotatedClass(SinhVien.class);
         conf.addAnnotatedClass(ChiTietSP.class);
         conf.addAnnotatedClass(ChucVu.class);
         conf.addAnnotatedClass(CuaHang.class);
         conf.addAnnotatedClass(DongSP.class);
         conf.addAnnotatedClass(GioHang.class);
+        conf.addAnnotatedClass(GioHangChiTiet.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(HoaDonChiTiet.class);
+        conf.addAnnotatedClass(MauSac.class);
         conf.addAnnotatedClass(NhanVien.class);
+        conf.addAnnotatedClass(NSX.class);
+        conf.addAnnotatedClass(SanPham.class);
+
 
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
