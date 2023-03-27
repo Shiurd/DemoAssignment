@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "DongSPServlet", value = "/DongSPServlet")
+@WebServlet(name = "DongSPServlet", value = "/dongsp/hien-thi")
 public class DongSPServlet extends HttpServlet {
     private DongSPRepository dongSPRepository = new DongSPRepository();
 
@@ -17,7 +17,7 @@ public class DongSPServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<DongSP> listDongSP = dongSPRepository.getAll();
         request.setAttribute("listDongSP", listDongSP);
-        request.getRequestDispatcher("view/DongSPView.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/DongSPView.jsp").forward(request,response);
     }
 
     @Override
