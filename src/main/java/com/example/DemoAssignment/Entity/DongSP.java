@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 
 @Data
-@AllArgsConstructor
+
 
 
 public class DongSP {
@@ -27,4 +27,13 @@ public class DongSP {
      */
     @Column(name = "Ten")
     private String ten;
+
+    public DongSP() {
+    }
+
+    public DongSP(String id, String ma, String ten) {
+        this.id = id;
+        this.ma = ma;
+        this.ten = ten;
+    }
 }

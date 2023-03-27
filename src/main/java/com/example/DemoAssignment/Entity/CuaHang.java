@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 
 @Data
-@AllArgsConstructor
 public class CuaHang {
 
     @Id
@@ -39,4 +38,16 @@ public class CuaHang {
 
     @Column(name = "QuocGia")
     private String quocGia;
+
+    public CuaHang() {
+    }
+
+    public CuaHang(String id, String ma, String ten, String diachi, String thanhpho, String quocGia) {
+        this.id = id;
+        this.ma = ma;
+        this.ten = ten;
+        this.diachi = diachi;
+        this.thanhpho = thanhpho;
+        this.quocGia = quocGia;
+    }
 }

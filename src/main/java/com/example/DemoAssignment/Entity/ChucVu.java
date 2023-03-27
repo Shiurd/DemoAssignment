@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 
 @Data
-@AllArgsConstructor
+
 public class ChucVu {
 
     @Id
@@ -28,4 +28,12 @@ public class ChucVu {
     @Column(name = "Ten")
     private String ten;
 
+    public ChucVu() {
+    }
+
+    public ChucVu(String id, String ma, String ten) {
+        this.id = id;
+        this.ma = ma;
+        this.ten = ten;
+    }
 }

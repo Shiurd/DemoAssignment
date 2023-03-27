@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 
 @Data
-@AllArgsConstructor
 public class NSX {
 
     @Id
@@ -26,4 +25,13 @@ public class NSX {
      */
     @Column(name = "Ten")
     private String ten;
+
+    public NSX() {
+    }
+
+    public NSX(String id, String ma, String ten) {
+        this.id = id;
+        this.ma = ma;
+        this.ten = ten;
+    }
 }

@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 
 @Data
-@AllArgsConstructor
 
 public class MauSac {
     @Id
@@ -26,4 +25,13 @@ public class MauSac {
      */
     @Column(name = "Ten")
     private String ten;
+
+    public MauSac() {
+    }
+
+    public MauSac(String id, String ma, String ten) {
+        this.id = id;
+        this.ma = ma;
+        this.ten = ten;
+    }
 }
