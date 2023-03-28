@@ -14,5 +14,7 @@ public class ChucVuRepository {
         Query query = session.createQuery("FROM ChucVu ");
         ArrayList<ChucVu> listChucVu = (ArrayList<ChucVu>) query.getResultList();
         return listChucVu;
+
+
     }
 }
