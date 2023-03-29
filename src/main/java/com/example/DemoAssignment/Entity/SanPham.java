@@ -26,4 +26,12 @@ public class SanPham {
      */
     @Column(name = "Ten")
     private String ten;
+
+    public SanPham() {
+    }
+
+    public SanPham(String ma, String ten) {
+        this.ma = ma;
+        this.ten = ten;
+    }
 }

@@ -56,4 +56,23 @@ public class NhanVien {
 
     @Column(name = "TrangThai")
     private int trangThai;
+
+    public NhanVien() {
+    }
+
+    public NhanVien(String ma, String ten, String tenDem, String ho, String gioiTinh, Date ngaySinh, String diaChi, String sdt, String matKhau, String idCH, String idCV, String idGuiBC, int trangThai) {
+        this.ma = ma;
+        this.ten = ten;
+        this.tenDem = tenDem;
+        this.ho = ho;
+        this.gioiTinh = gioiTinh;
+        this.ngaySinh = ngaySinh;
+        this.diaChi = diaChi;
+        this.sdt = sdt;
+        this.matKhau = matKhau;
+        this.idCH = idCH;
+        this.idCV = idCV;
+        this.idGuiBC = idGuiBC;
+        this.trangThai = trangThai;
+    }
 }

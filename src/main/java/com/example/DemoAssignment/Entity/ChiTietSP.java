@@ -64,4 +64,19 @@ public class ChiTietSP {
      */
     @Column(name = "GiaBan")
     private Double giaban;
+
+    public ChiTietSP() {
+    }
+
+    public ChiTietSP(String idsp, String idnsx, String idmausac, String iddongsp, String nambh, String mota, String soluongton, Double gianhap, Double giaban) {
+        this.idsp = idsp;
+        this.idnsx = idnsx;
+        this.idmausac = idmausac;
+        this.iddongsp = iddongsp;
+        this.nambh = nambh;
+        this.mota = mota;
+        this.soluongton = soluongton;
+        this.gianhap = gianhap;
+        this.giaban = giaban;
+    }
 }

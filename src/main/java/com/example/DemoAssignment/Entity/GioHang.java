@@ -61,4 +61,20 @@ public class GioHang {
      */
     @Column(name = "TinhTrang")
     private int tinhTrang;
+
+    public GioHang() {
+    }
+
+     GioHang( String idkh, String idnv, String ma, String ngaytao, String ngaythanhtoan, String tennguoinhan, String diachi, String sdt, int tinhTrang) {
+      //  this.id = id;
+        this.idkh = idkh;
+        this.idnv = idnv;
+        this.ma = ma;
+        this.ngaytao = ngaytao;
+        this.ngaythanhtoan = ngaythanhtoan;
+        this.tennguoinhan = tennguoinhan;
+        this.diachi = diachi;
+        this.sdt = sdt;
+        this.tinhTrang = tinhTrang;
+    }
 }

@@ -12,6 +12,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 public class HoaDonChiTiet {
+
     @Id
     @Column(name = "IdHoaDon")
     private UUID idhoadon;

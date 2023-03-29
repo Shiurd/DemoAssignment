@@ -10,7 +10,7 @@ import java.util.UUID;
 @Entity
 
 @Data
-@AllArgsConstructor
+
 public class GioHangChiTiet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,4 +37,15 @@ public class GioHangChiTiet {
     @Column(name = "DonGiaKhiGiam")
     private Double dongiakhigiam;
 
+    public GioHangChiTiet() {
+
+    }
+
+    public GioHangChiTiet(UUID idgiohang, String idchitietsp, String soluong, Double dongia, Double dongiakhigiam) {
+        this.idgiohang = idgiohang;
+        this.idchitietsp = idchitietsp;
+        this.soluong = soluong;
+        this.dongia = dongia;
+        this.dongiakhigiam = dongiakhigiam;
+    }
 }

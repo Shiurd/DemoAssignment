@@ -72,4 +72,21 @@ public class HoaDon {
      */
     @Column(name = "Sdt")
     private String sdt;
+
+    public HoaDon() {
+    }
+
+    public HoaDon(String idkh, String idnv, String ma, String ngaytao, String ngaythanhtoan, String ngayship, String ngaynhan, String tinhtrang, String tennguoinhan, String diachi, String sdt) {
+        this.idkh = idkh;
+        this.idnv = idnv;
+        this.ma = ma;
+        this.ngaytao = ngaytao;
+        this.ngaythanhtoan = ngaythanhtoan;
+        this.ngayship = ngayship;
+        this.ngaynhan = ngaynhan;
+        this.tinhtrang = tinhtrang;
+        this.tennguoinhan = tennguoinhan;
+        this.diachi = diachi;
+        this.sdt = sdt;
+    }
 }
