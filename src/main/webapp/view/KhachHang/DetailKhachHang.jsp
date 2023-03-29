@@ -15,7 +15,7 @@
           crossorigin="anonymous">
 </head>
 <body>
-<form action="/khach-hang/update" method="post" class="container">
+<form action="/khach-hang/update?id=${khachHang.id}" method="post" class="container">
 
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Mã</label>
@@ -77,7 +77,7 @@
             <input class="form-control" type="text" name="matKhau" value="${khachHang.matKhau}"><br>
         </div>
     </div>
-    <button type="submit">Them</button>
+    <button type="submit">Update</button>
 </form>
 </body>
 </html>

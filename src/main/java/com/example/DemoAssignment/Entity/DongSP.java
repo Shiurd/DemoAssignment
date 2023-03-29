@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Table(name = "DongSP")
 @Entity
@@ -16,7 +17,7 @@ public class DongSP {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id")
-    private String id;
+    private UUID id;
     /**
      *
      */
@@ -31,7 +32,7 @@ public class DongSP {
     public DongSP() {
     }
 
-    public DongSP(String id, String ma, String ten) {
+    public DongSP(UUID id, String ma, String ten) {
         this.id = id;
         this.ma = ma;
         this.ten = ten;

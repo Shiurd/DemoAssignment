@@ -18,7 +18,8 @@ import java.util.UUID;
         "/khach-hang/hien-thi",
         "/khach-hang/add",
         "/khach-hang/detail",
-        "/khach-hang/update"
+        "/khach-hang/update",
+        "/khach-hang/delete"
 })
 public class KhachHangServlet extends HttpServlet {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -40,6 +41,13 @@ public class KhachHangServlet extends HttpServlet {
             String ngSinh = dateFormat.format(kh.getNgaySinh());
             request.setAttribute("ngaySinh", ngSinh);
             request.getRequestDispatcher("/view/KhachHang/DetailKhachHang.jsp").forward(request,response);
+        } else if (uri.contains("/khach-hang/delete")){
+            UUID id = UUID.fromString(request.getParameter("id"));
+            KhachHang kh = khachHangRepository.getById(id);
+            khachHangRepository.delete(kh);
+            ArrayList<KhachHang> listKhachHang = khachHangRepository.getAll();
+            request.setAttribute("listKhachHang", listKhachHang);
+            request.getRequestDispatcher("/view/KhachHangView.jsp").forward(request, response);
         }
     }
 
@@ -66,7 +74,7 @@ public class KhachHangServlet extends HttpServlet {
             }
 
             KhachHang kh = new KhachHang();
-            kh.setMa(ma);;
+            kh.setMa(ma);
             kh.setTen(ten);
             kh.setHo(ho);
             kh.setTenDem(tenDem);
@@ -79,7 +87,37 @@ public class KhachHangServlet extends HttpServlet {
             khachHangRepository.add(kh);
             response.sendRedirect("/khach-hang/hien-thi");
         } else if(uri.contains("/khach-hang/update")){
+            UUID id = UUID.fromString(request.getParameter("id"));
+            String ma = request.getParameter("ma");
+            String ten = request.getParameter("ten");
+            String tenDem = request.getParameter("tenDem");
+            String ho = request.getParameter("ho");
+            String sdt = request.getParameter("sdt");
+            String diaChi = request.getParameter("diaChi");
+            String thanhPho = request.getParameter("thanhPho");
+            String quocGia = request.getParameter("thanhPho");
+            String matKhau = request.getParameter("matKhau");
+            Date ngaySinh;
+            try {
+                ngaySinh = dateFormat.parse(request.getParameter("ngaySinh"));
 
+            } catch (ParseException e){
+                throw new RuntimeException(e);
+            }
+            KhachHang kh = new KhachHang();
+            kh.setId(id);
+            kh.setMa(ma);
+            kh.setTen(ten);
+            kh.setHo(ho);
+            kh.setTenDem(tenDem);
+            kh.setNgaySinh(ngaySinh);
+            kh.setSdt(sdt);
+            kh.setDiaChi(diaChi);
+            kh.setThanhPho(thanhPho);
+            kh.setQuocGia(quocGia);
+            kh.setMatKhau(matKhau);
+            khachHangRepository.update(kh);
+            response.sendRedirect("/khach-hang/hien-thi");
         }
     }
 }

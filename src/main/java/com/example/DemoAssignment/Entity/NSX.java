@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Table(name = "NSX")
 @Entity
@@ -14,7 +15,7 @@ public class NSX {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id")
-    private String id;
+    private UUID id;
     /**
      *
      */
@@ -29,7 +30,7 @@ public class NSX {
     public NSX() {
     }
 
-    public NSX(String id, String ma, String ten) {
+    public NSX(UUID id, String ma, String ten) {
         this.id = id;
         this.ma = ma;
         this.ten = ten;

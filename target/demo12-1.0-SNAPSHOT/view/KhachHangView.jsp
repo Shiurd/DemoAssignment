@@ -111,8 +111,8 @@
             <td>${kh.thanhPho}</td>
             <td>${kh.quocGia}</td>
             <td>${kh.matKhau}</td>
-            <td><a href="">Xoa</a>
-                <a href="">Detail</a></td>
+            <td><a href="/khach-hang/delete?id=${kh.id}">Xoa</a>
+                <a href="/khach-hang/detail?id=${kh.id}">Detail</a></td>
         </tr>
     </c:forEach>
     </tbody>

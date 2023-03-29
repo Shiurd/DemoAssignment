@@ -13,8 +13,13 @@ public class KhachHangRepository {
     Session session = HibernateUlti.getFACTORY().openSession();
 
     public ArrayList<KhachHang> getAll(){
-        Query query = session.createQuery("FROM KhachHang ");
-        ArrayList<KhachHang> listKhachHang = (ArrayList<KhachHang>) query.getResultList();
+        ArrayList<KhachHang> listKhachHang = new ArrayList<>();
+        try (Session session = HibernateUlti.getFACTORY().openSession()) {
+            Query query = session.createQuery("from KhachHang ");
+            listKhachHang = (ArrayList<KhachHang>) query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return listKhachHang;
     }
 
@@ -45,7 +50,7 @@ public class KhachHangRepository {
     }
 
     public Boolean update(KhachHang khachHang) {
-        Transaction transaction = null;
+        Transaction transaction;
         try (Session session = HibernateUlti.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.merge(khachHang);
@@ -56,6 +61,18 @@ public class KhachHangRepository {
             return false;
 
         }
+    }
+    public Boolean delete(KhachHang khachHang){
+        Transaction transaction;
+        try (Session session = HibernateUlti.getFACTORY().openSession()){
+            transaction = session.beginTransaction();
+            session.delete(khachHang);
+            transaction.commit();
+            return true;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

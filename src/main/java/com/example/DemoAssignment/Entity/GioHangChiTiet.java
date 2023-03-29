@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Table(name = "GioHangChiTiet")
 @Entity
@@ -14,7 +15,7 @@ public class GioHangChiTiet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "IdGioHang")
-    private String idgiohang;
+    private UUID idgiohang;
     /**
      *
      */

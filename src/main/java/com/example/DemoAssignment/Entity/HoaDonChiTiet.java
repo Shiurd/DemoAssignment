@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Table(name = "HoaDonChiTiet")
 @Entity
@@ -13,7 +14,7 @@ import javax.persistence.*;
 public class HoaDonChiTiet {
     @Id
     @Column(name = "IdHoaDon")
-    private String idhoadon;
+    private UUID idhoadon;
     /**
      *
      */
