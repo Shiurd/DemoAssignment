@@ -21,6 +21,7 @@ public class ChiTietSP {
     /**
      *
      */
+
     @Column(name = "idSP")
     private String idsp;
     /**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="AssignmentDB" uuid="86e0ec9d-27e0-4f12-926e-de628346bb0f">
+    <data-source source="LOCAL" name="SOF2041_Assignment_Database@SHIURD_PC" uuid="2e61385a-fb4d-466f-89af-c2f4613bd052">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
