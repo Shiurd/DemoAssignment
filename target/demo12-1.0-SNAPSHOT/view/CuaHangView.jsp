@@ -16,6 +16,41 @@
           crossorigin="anonymous">
 </head>
 <body>
+<form action="/cua-hang/add" method="post" class="container">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mã</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="ma"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Tên</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="ten"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Địa chỉ</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="diachi"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Thành phố</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="thanhpho"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Quốc gia</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="quocgia"><br>
+        </div>
+    </div>
+    <button type="submit">Them</button>
+    <br>
+
+
 <table class="table">
     <thead>
     <tr>
@@ -36,8 +71,8 @@
             <td>${ch.diachi}</td>
             <td>${ch.thanhpho}</td>
             <td>${ch.quocGia}</td>
-            <td><a href="">Xoa</a>
-                <a href="">Detail</a></td>
+            <td><a href="/cua-hang/delete?id=${ch.id}">Xoa</a>
+                <a href="/cua-hang/detail?id=${ch.id}">Detail</a></td>
         </tr>
     </c:forEach>
     </tbody>
