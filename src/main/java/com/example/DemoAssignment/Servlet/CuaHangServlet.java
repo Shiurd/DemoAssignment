@@ -46,6 +46,8 @@ public class CuaHangServlet extends HttpServlet {
                 request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
                 break;
             }
+            default:
+                throw new IllegalStateException("Unexpected value: " + uri);
         }
     }
 
@@ -62,8 +64,8 @@ public class CuaHangServlet extends HttpServlet {
             CuaHang cuaHang = new CuaHang();
             cuaHang.setMa(ma);
             cuaHang.setTen(ten);
-            cuaHang.setDiachi(diaChi);
-            cuaHang.setThanhpho(thanhPho);
+            cuaHang.setDiaChi(diaChi);
+            cuaHang.setThanhPho(thanhPho);
             cuaHang.setQuocGia(quocGia);
 
 
@@ -81,8 +83,8 @@ public class CuaHangServlet extends HttpServlet {
                 CuaHang cuaHang = cuaHangRepository.getById(id);
                 cuaHang.setMa(ma);
                 cuaHang.setTen(ten);
-                cuaHang.setDiachi(diaChi);
-                cuaHang.setThanhpho(thanhPho);
+                cuaHang.setDiaChi(diaChi);
+                cuaHang.setThanhPho(thanhPho);
                 cuaHang.setQuocGia(quocGia);
 
                 cuaHangRepository.update(cuaHang);

@@ -1,6 +1,5 @@
 package com.example.DemoAssignment.Entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,12 +29,12 @@ public class CuaHang {
      *
      */
     @Column(name = "DiaChi")
-    private String diachi;
+    private String diaChi;
     /**
      *
      */
     @Column(name = "ThanhPho")
-    private String thanhpho;
+    private String thanhPho;
 
     @Column(name = "QuocGia")
     private String quocGia;
@@ -43,12 +42,12 @@ public class CuaHang {
     public CuaHang() {
     }
 
-    public CuaHang(UUID id, String ma, String ten, String diachi, String thanhpho, String quocGia) {
+    public CuaHang(UUID id, String ma, String ten, String diaChi, String thanhPho, String quocGia) {
         this.id = id;
         this.ma = ma;
         this.ten = ten;
-        this.diachi = diachi;
-        this.thanhpho = thanhpho;
+        this.diaChi = diaChi;
+        this.thanhPho = thanhPho;
         this.quocGia = quocGia;
     }
 }

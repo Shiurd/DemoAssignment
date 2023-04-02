@@ -2,15 +2,19 @@ package com.example.DemoAssignment.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.UUID;
 
+/**
+ * @author Shiurd
+ */
 @Table(name = "MauSac")
 @Entity
 
 @Data
-
+@NoArgsConstructor
 public class MauSac {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,8 +31,6 @@ public class MauSac {
     @Column(name = "Ten")
     private String ten;
 
-    public MauSac() {
-    }
 
     public MauSac(UUID id, String ma, String ten) {
         this.id = id;

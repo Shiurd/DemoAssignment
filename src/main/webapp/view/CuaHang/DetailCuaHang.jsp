@@ -31,13 +31,13 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Địa chỉ</label>
         <div class="col-sm-10">
-            <input value="${cuaHang.diachi}" class="form-control" type="text" name="diachi"><br>
+            <input value="${cuaHang.diaChi}" class="form-control" type="text" name="diachi"><br>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Thành phố</label>
         <div class="col-sm-10">
-            <input value="${cuaHang.thanhpho}" class="form-control" type="text" name="thanhpho"><br>
+            <input value="${cuaHang.thanhPho}" class="form-control" type="text" name="thanhpho"><br>
         </div>
     </div>
     <div class="form-group row">

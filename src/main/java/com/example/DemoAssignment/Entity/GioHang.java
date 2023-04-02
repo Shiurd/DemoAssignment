@@ -40,7 +40,7 @@ public class GioHang {
      *
      */
     @Column(name = "NgayThanhToan")
-    private String ngaythanhtoan;
+    private String ngayThanhToan;
     /**
      *
      */
@@ -65,13 +65,13 @@ public class GioHang {
     public GioHang() {
     }
 
-     GioHang( String idkh, String idnv, String ma, String ngaytao, String ngaythanhtoan, String tennguoinhan, String diachi, String sdt, int tinhTrang) {
+     GioHang(String idkh, String idnv, String ma, String ngaytao, String ngayThanhToan, String tennguoinhan, String diachi, String sdt, int tinhTrang) {
       //  this.id = id;
         this.idkh = idkh;
         this.idnv = idnv;
         this.ma = ma;
         this.ngaytao = ngaytao;
-        this.ngaythanhtoan = ngaythanhtoan;
+        this.ngayThanhToan = ngayThanhToan;
         this.tennguoinhan = tennguoinhan;
         this.diachi = diachi;
         this.sdt = sdt;
