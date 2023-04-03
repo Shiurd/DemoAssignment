@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.UUID;
+import java.util.List;
 
 @Table(name = "ChiTietSP")
 @Entity
@@ -21,24 +22,22 @@ public class ChiTietSP {
     /**
      *
      */
+    @ManyToOne
+    @JoinColumn(name = "idSP")
+    private SanPham sanPham;
+    /**
+     *
+     */
 
-    @Column(name = "idSP")
-    private String idsp;
+    @ManyToOne
+    @JoinColumn(name = "idMauSac")
+    private MauSac mauSac;
     /**
      *
      */
-    @Column(name = "idNxs")
-    private String idnsx;
-    /**
-     *
-     */
-    @Column(name = "idMauSac")
-    private String idmausac;
-    /**
-     *
-     */
-    @Column(name = "idDongSP")
-    private String iddongsp;
+    @ManyToOne
+    @JoinColumn(name = "idDongSP")
+    private DongSP dongSP;
     /**
      *
      */
@@ -52,8 +51,9 @@ public class ChiTietSP {
     /**
      *
      */
-    @Column(name = "iDNxs")
-    private String soluongton;
+    @ManyToOne
+    @JoinColumn(name = "IdNsx")
+    private NSX nsx;
     /**
      *
      */
@@ -62,21 +62,14 @@ public class ChiTietSP {
     /**
      *
      */
+    @Column(name = "SoLuongTon")
+    private Integer soLuongTon;
+
     @Column(name = "GiaBan")
     private Double giaban;
 
     public ChiTietSP() {
     }
 
-    public ChiTietSP(String idsp, String idnsx, String idmausac, String iddongsp, String nambh, String mota, String soluongton, Double gianhap, Double giaban) {
-        this.idsp = idsp;
-        this.idnsx = idnsx;
-        this.idmausac = idmausac;
-        this.iddongsp = iddongsp;
-        this.nambh = nambh;
-        this.mota = mota;
-        this.soluongton = soluongton;
-        this.gianhap = gianhap;
-        this.giaban = giaban;
-    }
+
 }

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Table(name = "NSX")
@@ -26,6 +28,12 @@ public class NSX {
      */
     @Column(name = "Ten")
     private String ten;
+
+    /**
+     *
+     */
+    @OneToMany(mappedBy = "NSX", fetch = FetchType.LAZY)
+    private List<ChiTietSP> chiTietSPs = new ArrayList<>();
 
     public NSX() {
     }

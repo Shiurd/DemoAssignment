@@ -25,18 +25,41 @@ public class SanPhamServlet extends HttpServlet {
         if (uri.equals("/san-pham/hien-thi")) {
             ArrayList<SanPham> listSanPham = sanPhamRepository.getAll();
             request.setAttribute("listSanPham", listSanPham);
-            request.getRequestDispatcher("/WEB-INF/views/SanPhamView.jsp").forward(request, response);
+            request.getRequestDispatcher("/view/SanPhamView.jsp").forward(request, response);
         } else if(uri.contains("/san-pham/detail")){
             UUID id = UUID.fromString(request.getParameter("id"));
             SanPham sanPham = sanPhamRepository.getById(id);
 
             request.setAttribute("sanPham", sanPham);
-            request.getRequestDispatcher("/views/SanPham/DetailSanPham.jsp").forward(request, response);
+            request.getRequestDispatcher("/view/SanPham/DetailSanPham.jsp").forward(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String uri = request.getRequestURI();
+        if (uri.equals("/san-pham/add")) {
+            SanPham sanPham = new SanPham();
+            String ma = request.getParameter("ma");
+            String ten = request.getParameter("ten");
 
+            sanPham.setMa(ma);
+            sanPham.setTen(ten);
+
+            sanPhamRepository.add(sanPham);
+            response.sendRedirect("/san-pham/hien-thi");
+        } else if (uri.equals("/san-pham/update")){
+            UUID id = UUID.fromString(request.getParameter("id"));
+            SanPham sanPham = sanPhamRepository.getById(id);
+
+            String ma = request.getParameter("ma");
+            String ten = request.getParameter("ten");
+
+            sanPham.setMa(ma);
+            sanPham.setTen(ten);
+
+            sanPhamRepository.update(sanPham);
+            response.sendRedirect("/san-pham/hien-thi");
+        }
     }
 }

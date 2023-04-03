@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Table(name = "DongSP")
@@ -28,6 +30,9 @@ public class DongSP {
      */
     @Column(name = "Ten")
     private String ten;
+
+    @OneToMany(mappedBy ="DongSP", fetch = FetchType.LAZY)
+    private List<ChiTietSP> chiTietSPs = new ArrayList<>();
 
     public DongSP() {
     }
