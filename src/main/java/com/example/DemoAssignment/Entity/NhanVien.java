@@ -45,11 +45,14 @@ public class NhanVien {
     @Column(name = "MatKhau")
     private String matKhau;
 
-    @Column(name = "idCH")
-    private String idCH;
 
-    @Column(name = "idCV")
-    private String idCV;
+    @ManyToOne
+    @JoinColumn(name = "IdCH")
+    private CuaHang cuaHang;
+
+    @ManyToOne
+    @JoinColumn(name = "IdCV")
+    private ChucVu chucVu;
 
     @Column(name = "idGuiBC")
     private String idGuiBC;
@@ -60,19 +63,4 @@ public class NhanVien {
     public NhanVien() {
     }
 
-    public NhanVien(String ma, String ten, String tenDem, String ho, String gioiTinh, Date ngaySinh, String diaChi, String sdt, String matKhau, String idCH, String idCV, String idGuiBC, int trangThai) {
-        this.ma = ma;
-        this.ten = ten;
-        this.tenDem = tenDem;
-        this.ho = ho;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.diaChi = diaChi;
-        this.sdt = sdt;
-        this.matKhau = matKhau;
-        this.idCH = idCH;
-        this.idCV = idCV;
-        this.idGuiBC = idGuiBC;
-        this.trangThai = trangThai;
-    }
 }

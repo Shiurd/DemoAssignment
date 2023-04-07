@@ -30,14 +30,16 @@ public class ChiTietSP {
      */
 
     @ManyToOne
-    @JoinColumn(name = "idMauSac")
+    @JoinColumn(name = "IdMauSac")
     private MauSac mauSac;
     /**
      *
      */
     @ManyToOne
-    @JoinColumn(name = "idDongSP")
+    @JoinColumn(name = "IdDongSP")
     private DongSP dongSP;
+//    @Column(name = "IdDongSP")
+//    private String idDongSP;
     /**
      *
      */
@@ -71,5 +73,15 @@ public class ChiTietSP {
     public ChiTietSP() {
     }
 
-
+    public ChiTietSP(SanPham sanPham, MauSac mauSac, DongSP dongSP, String nambh, String mota, NSX nsx, Double gianhap, Integer soLuongTon, Double giaban) {
+        this.sanPham = sanPham;
+        this.mauSac = mauSac;
+        this.dongSP = dongSP;
+        this.nambh = nambh;
+        this.mota = mota;
+        this.nsx = nsx;
+        this.gianhap = gianhap;
+        this.soLuongTon = soLuongTon;
+        this.giaban = giaban;
+    }
 }

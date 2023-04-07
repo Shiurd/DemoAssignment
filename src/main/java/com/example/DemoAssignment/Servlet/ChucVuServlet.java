@@ -19,7 +19,7 @@ import java.util.UUID;
         "/chuc-vu/delete"
 })
 public class ChucVuServlet extends HttpServlet {
-    private ChucVuRepository chucVuRepository = new ChucVuRepository();
+    private final ChucVuRepository chucVuRepository = new ChucVuRepository();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

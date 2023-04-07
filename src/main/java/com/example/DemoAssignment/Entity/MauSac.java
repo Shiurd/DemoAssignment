@@ -33,8 +33,8 @@ public class MauSac {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(mappedBy ="MauSac", fetch = FetchType.LAZY)
-    private List<ChiTietSP> chiTietSPs = new ArrayList<>();
+    @OneToMany(mappedBy ="mauSac", fetch = FetchType.LAZY)
+    private List<ChiTietSP> chiTietSPMauSac = new ArrayList<>();
 
 
     public MauSac(UUID id, String ma, String ten) {

@@ -31,8 +31,8 @@ public class DongSP {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(mappedBy ="DongSP", fetch = FetchType.LAZY)
-    private List<ChiTietSP> chiTietSPs = new ArrayList<>();
+    @OneToMany(mappedBy ="dongSP", fetch = FetchType.LAZY)
+    private List<ChiTietSP> chiTietSPDongSP = new ArrayList<>();
 
     public DongSP() {
     }

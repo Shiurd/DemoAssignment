@@ -15,6 +15,7 @@ public class ChucVuRepository {
     public ArrayList<ChucVu> getAll(){
         ArrayList<ChucVu> listChucVu = new ArrayList<>();
         try (Session session = HibernateUlti.getFACTORY().openSession()){
+
             Query query = session.createQuery("FROM ChucVu ");
             listChucVu = (ArrayList<ChucVu>) query.getResultList();
         } catch (Exception e) {

@@ -25,7 +25,7 @@ public class HibernateUlti {
 
         conf.setProperties(properties);
         conf.addAnnotatedClass(KhachHang.class);
-        conf.addAnnotatedClass(ChiTietSP.class);
+
         conf.addAnnotatedClass(ChucVu.class);
         conf.addAnnotatedClass(CuaHang.class);
         conf.addAnnotatedClass(DongSP.class);
@@ -37,7 +37,7 @@ public class HibernateUlti {
         conf.addAnnotatedClass(NhanVien.class);
         conf.addAnnotatedClass(NSX.class);
         conf.addAnnotatedClass(SanPham.class);
-
+        conf.addAnnotatedClass(ChiTietSP.class);
 
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()

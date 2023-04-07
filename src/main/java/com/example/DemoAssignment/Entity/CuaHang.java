@@ -3,6 +3,8 @@ package com.example.DemoAssignment.Entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Table(name = "CuaHang")
@@ -38,6 +40,9 @@ public class CuaHang {
 
     @Column(name = "QuocGia")
     private String quocGia;
+
+    @OneToMany(mappedBy = "cuaHang", fetch = FetchType.LAZY)
+    private List<NhanVien> nhanVienList = new ArrayList<>();
 
     public CuaHang() {
     }

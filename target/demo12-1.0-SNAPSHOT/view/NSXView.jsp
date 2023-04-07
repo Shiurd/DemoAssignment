@@ -16,6 +16,23 @@
           crossorigin="anonymous">
 </head>
 <body>
+<form action="/nsx/add" method="post" class="container">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mã</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="ma"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Tên</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="ten"><br>
+        </div>
+    </div>
+    <button type="submit">Them</button>
+    <br>
+
+
 <table class="table">
     <thead>
     <tr>
@@ -31,10 +48,10 @@
             <td>${nsx.id}</td>
             <td>${nsx.ma}</td>
             <td>${nsx.ten}</td>
-            <td><a href="">Xoa</a>
-                <a href="">Detail</a></td>
+            <td><a href="/nsx/delete?id=${nsx.id}">Xoa</a>
+                <a href="/nsx/detail?id=${nsx.id}">Detail</a></td>
         </tr>
-    </c:forEach>Id
+    </c:forEach>
     </tbody>
 </table>
 </body>

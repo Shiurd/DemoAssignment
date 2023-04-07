@@ -32,8 +32,8 @@ public class NSX {
     /**
      *
      */
-    @OneToMany(mappedBy = "NSX", fetch = FetchType.LAZY)
-    private List<ChiTietSP> chiTietSPs = new ArrayList<>();
+    @OneToMany(mappedBy = "nsx", fetch = FetchType.LAZY)
+    private List<ChiTietSP> chiTietSPNSX = new ArrayList<>();
 
     public NSX() {
     }

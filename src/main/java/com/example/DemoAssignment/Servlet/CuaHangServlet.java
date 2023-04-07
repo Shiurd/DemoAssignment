@@ -23,31 +23,24 @@ public class CuaHangServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
-        switch (uri) {
-            case "/cua-hang/hien-thi": {
-                ArrayList<CuaHang> listCuaHang = cuaHangRepository.getAll();
-                request.setAttribute("ListCuaHang", listCuaHang);
-                request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
-                break;
-            }
-            case "/cua-hang/detail": {
-                UUID id = UUID.fromString(request.getParameter("id"));
-                CuaHang cuaHang = cuaHangRepository.getById(id);
-                request.setAttribute("cuaHang", cuaHang);
-                request.getRequestDispatcher("/view/CuaHang/DetailCuaHang.jsp").forward(request, response);
-                break;
-            }
-            case "/cua-hang/delete": {
-                UUID id = UUID.fromString(request.getParameter("id"));
-                CuaHang cuaHang = cuaHangRepository.getById(id);
-                cuaHangRepository.delete(cuaHang);
-                ArrayList<CuaHang> listCuaHang = cuaHangRepository.getAll();
-                request.setAttribute("ListCuaHang", listCuaHang);
-                request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
-                break;
-            }
-            default:
-                throw new IllegalStateException("Unexpected value: " + uri);
+        if (uri.contains("/cua-hang/hien-thi")) {
+            ArrayList<CuaHang> listCuaHang = cuaHangRepository.getAll();
+            request.setAttribute("ListCuaHang", listCuaHang);
+            request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
+        } else if ("/cua-hang/detail".equals(uri)) {
+            UUID id = UUID.fromString(request.getParameter("id"));
+            CuaHang cuaHang = cuaHangRepository.getById(id);
+            request.setAttribute("cuaHang", cuaHang);
+            request.getRequestDispatcher("/view/CuaHang/DetailCuaHang.jsp").forward(request, response);
+        } else if ("/cua-hang/delete".equals(uri)) {
+            UUID id = UUID.fromString(request.getParameter("id"));
+            CuaHang cuaHang = cuaHangRepository.getById(id);
+            cuaHangRepository.delete(cuaHang);
+            ArrayList<CuaHang> listCuaHang = cuaHangRepository.getAll();
+            request.setAttribute("ListCuaHang", listCuaHang);
+            request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
+        } else {
+            throw new IllegalStateException("Unexpected value: " + uri);
         }
     }
 

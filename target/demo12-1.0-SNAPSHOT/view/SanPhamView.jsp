@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="sanpham.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
@@ -50,9 +51,21 @@
                 <td>${cv.ten}</td>
                 <td><a href="/san-pham/delete?id=${cv.id}">Xoa</a>
                     <a href="/san-pham/detail?id=${cv.id}">Detail</a></td>
+                <td><a href="/chi-tiet-sp/hien-thi?id=${cv.id}">Chi tiet SP</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                Column
+            </div>
+            <div class="col">
+                Column
+            </div>
+        </div>
+    </div>
 </body>
 </html>

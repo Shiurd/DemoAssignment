@@ -29,7 +29,7 @@ public class SanPham {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(mappedBy = "SanPham",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "sanPham",fetch = FetchType.LAZY)
     private List<ChiTietSP> chiTietSPList =new ArrayList<>();
 
     public SanPham() {
