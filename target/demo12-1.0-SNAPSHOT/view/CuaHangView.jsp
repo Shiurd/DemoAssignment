@@ -63,7 +63,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${ListCuaHang}" var="ch">
+    <c:forEach items="${listCuaHang}" var="ch">
         <tr>
             <td>${ch.id}</td>
             <td>${ch.ma}</td>
