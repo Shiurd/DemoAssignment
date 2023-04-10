@@ -15,98 +15,112 @@
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
 </head>
-<body>
-    <form action="/chi-tiet-sp/add" method="post" class="container">
-        <div class="row">
-            <div class="col-12">
-                <label class="form-label select-label">San Pham</label>
-                <select class="select form-control-lg" name="sap">
-                    <c:forEach items="${sanPhamArrayList}" var="sap">
-                        <option value="${sap.id}">${sap.ten}</option>
-                    </c:forEach>
-                </select>
-
-
-            </div>
-            <div class="col-12">
-                <label class="form-label select-label">NSX</label>
-                <select class="select form-control-lg" name="nsx">
-                    <c:forEach items="${nsxArrayList}" var="nsx">
-                        <option value="${nsx.id}">${nsx.ten}</option>
-                    </c:forEach>
-                </select>
-
-
-            </div>
-            <div class="col-12">
-                <label class="form-label select-label">Mau Sac</label>
-                <select class="select form-control-lg" name="ms">
-                    <c:forEach items="${mauSacArrayList}" var="ms">
-                        <option value="${ms.id}">${ms.ten}</option>
-                    </c:forEach>
-                </select>
-
-
-            </div>
-            <div class="col-12">
-                <label class="form-label select-label">Dong SP</label>
-                <select class="select form-control-lg" name="dongSP">
-                    <c:forEach items="${dongSPArrayList}" var="dongSP">
-                        <option value="${dongSP.id}">${dongSP.ten}</option>
-                    </c:forEach>
-                </select>
-
-
-            </div>
-
-            <div class="col-md-6 mb-4">
-
-                <div class="form-outline">
-                    <input type="text" class="form-control form-control-lg" name="namBH"/>
-                    <label class="form-label">Nam Ban Hang</label>
-                </div>
-
-            </div>
-            <div class="col-md-6 mb-4">
-
-                <div class="form-outline">
-                    <input type="text" class="form-control form-control-lg" name="moTa"/>
-                    <label class="form-label">Mo Ta</label>
-                </div>
-
-            </div>
-
-            <div class="col-md-6 mb-4">
-
-                <div class="form-outline">
-                    <input type="text" class="form-control form-control-lg" name="soLuongTon"/>
-                    <label class="form-label">So Luong Ton</label>
-                </div>
-
-            </div>
-
-            <div class="col-md-6 mb-4">
-
-                <div class="form-outline">
-                    <input type="text" class="form-control form-control-lg" name="giaNhap"/>
-                    <label class="form-label">Gia Nhap</label>
-                </div>
-
-            </div>
-
-            <div class="col-md-6 mb-4">
-
-                <div class="form-outline">
-                    <input type="text" class="form-control form-control-lg" name="giaBan"/>
-                    <label class="form-label">Gia Ban</label>
-                </div>
-
-            </div>
-            <div class="mt-4 pt-2">
-                <input class="btn btn-primary btn-lg" type="submit" value="Submit"/>
-            </div>
+<body><form action="${pageContext.request.contextPath}/chi-tiet-sp/add" method="post" class="container">
+    <div class="row">
+        <div class="col-12">
+            <label class="form-label select-label">San Pham</label>
+            <select class="select form-control-lg" name="sap">
+                <jsp:useBean id="sanPhamArrayList" scope="request" type="java.util.List"/>
+                <c:forEach items="${sanPhamArrayList}" var="sap">
+                    <option value="${sap.id}">${sap.ten}</option>
+                </c:forEach>
+            </select>
+            <br>
+            <br>
+            <label class="form-label select-label">NSX</label>
+            <select class="select form-control-lg" name="nsx">
+                <jsp:useBean id="nsxArrayList" scope="request" type="java.util.List"/>
+                <c:forEach items="${nsxArrayList}" var="nsx">
+                    <option value="${nsx.id}">${nsx.ten}</option>
+                </c:forEach>
+            </select>
+            <br>
+            <br>
+            <label class="form-label select-label">Mau Sac</label>
+            <select class="select form-control-lg" name="ms">
+                <jsp:useBean id="mauSacArrayList" scope="request" type="java.util.List"/>
+                <c:forEach items="${mauSacArrayList}" var="ms">
+                    <option value="${ms.id}">${ms.ten}</option>
+                </c:forEach>
+            </select>
+            <br>
+            <br>
+            <label class="form-label select-label">Dong SP</label>
+            <select class="select form-control-lg" name="dongSP">
+                <jsp:useBean id="dongSPArrayList" scope="request" type="java.util.List"/>
+                <c:forEach items="${dongSPArrayList}" var="dongSP">
+                    <option value="${dongSP.id}">${dongSP.ten}</option>
+                </c:forEach>
+            </select>
+            <br>
+            <br>
         </div>
-    </form>>
+
+        <div class="col-12">
+
+
+
+        </div>
+        <div class="col-12">
+
+
+
+        </div>
+        <div class="col-12">
+
+
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <div class="form-outline">
+                <input type="text" class="form-control form-control-lg" name="namBH"/>
+                <label class="form-label">Nam Ban Hang</label>
+            </div>
+
+        </div>
+        <div class="col-md-6 mb-4">
+
+            <div class="form-outline">
+                <input type="text" class="form-control form-control-lg" name="moTa"/>
+                <label class="form-label">Mo Ta</label>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <div class="form-outline">
+                <input type="text" class="form-control form-control-lg" name="soLuongTon"/>
+                <label class="form-label">So Luong Ton</label>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <div class="form-outline">
+                <input type="text" class="form-control form-control-lg" name="giaNhap"/>
+                <label class="form-label">Gia Nhap</label>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+            <div class="form-outline">
+                <input type="text" class="form-control form-control-lg" name="giaBan"/>
+                <label class="form-label">Gia Ban</label>
+            </div>
+
+        </div>
+        <div class="mt-4 pt-2">
+            <input class="btn btn-primary btn-lg" type="submit" value="Submit"/>
+        </div>
+    </div>
+</form>>
+
 
     <table class="table">
     <thead>
@@ -124,6 +138,7 @@
     </tr>
     </thead>
     <tbody>
+    <jsp:useBean id="chiTietSPArrayList" scope="request" type="java.util.List"/>
     <c:forEach items="${chiTietSPArrayList}" var="ct">
         <tr>
             <td>${ct.id}</td>
@@ -137,8 +152,8 @@
             <td>${ct.gianhap}</td>
             <td>${ct.giaban}</td>
 
-            <td><a href="/chi-tiet-sp/delete?id=${nv.id}">Xoa</a>
-                <a href="/chi-tiet-sp/detail?id=${nv.id}">Detail</a></td>
+            <td><a href="${pageContext.request.contextPath}/chi-tiet-sp/delete?id=${ct.id}">Xoa</a>
+                <a href="${pageContext.request.contextPath}/chi-tiet-sp/detail?id=${ct.id}">Detail</a></td>
         </tr>
     </c:forEach>
     </tbody>

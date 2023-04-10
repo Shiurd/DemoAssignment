@@ -111,6 +111,37 @@ public class ChiTietSPServlet extends HttpServlet {
             response.sendRedirect("/chi-tiet-sp/hien-thi");
 
 
+        }else if(uri.contains("/chi-tiet-sp/update")){
+            UUID id = UUID.fromString(request.getParameter("id"));
+            UUID idSP = UUID.fromString(request.getParameter("sap"));
+            UUID idNSX = UUID.fromString(request.getParameter("nsx"));
+            UUID idMauSac = UUID.fromString(request.getParameter("ms"));
+            UUID idDongSP = UUID.fromString(request.getParameter("dongSP"));
+
+            Integer namHB = Integer.valueOf(request.getParameter("namBH"));
+            String moTa = request.getParameter("moTa");
+            Integer soLuongTon = Integer.valueOf(request.getParameter("soLuongTon"));
+            Integer giaNhap = Integer.valueOf(request.getParameter("giaNhap"));
+            Integer giaBan = Integer.valueOf(request.getParameter("giaBan"));
+
+            SanPham sanPham = sanPhamRepository.getById(idSP);
+            MauSac mauSac = mauSacRepository.getById(idMauSac);
+            DongSP dongSP = dongSPRepository.getById(idDongSP);
+            NSX nsx = nsxRepository.getById(idNSX);
+
+            ChiTietSP chiTietSP = new ChiTietSP();
+            chiTietSP.setId(id);
+            chiTietSP.setSanPham(sanPham);
+            chiTietSP.setMauSac(mauSac);
+            chiTietSP.setDongSP(dongSP);
+            chiTietSP.setNambh(namHB);
+            chiTietSP.setMota(moTa);
+            chiTietSP.setNsx(nsx);
+            chiTietSP.setGianhap(giaNhap);
+            chiTietSP.setSoLuongTon(soLuongTon);
+            chiTietSP.setGiaban(giaBan);
+            chiTietSPRepository.update(chiTietSP);
+            response.sendRedirect("/chi-tiet-sp/hien-thi");
         }
     }
 }

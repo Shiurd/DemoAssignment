@@ -1,12 +1,15 @@
+<%--<jsp:useBean id="chiTietSP" scope="request" type="java.util.ArrayList"/>--%>
+
 <%--
   Created by IntelliJ IDEA.
-  User: Shiurd
-  Date: 4/7/2023
-  Time: 12:33 PM
+  User: Shiurdj
+  Date: 4/10/2023
+  Time: 10:33 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -15,59 +18,50 @@
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
           crossorigin="anonymous">
 </head>
-<body><form action="${pageContext.request.contextPath}/chi-tiet-sp/add" method="post" class="container">
+<body>
+<form action="${pageContext.request.contextPath}/chi-tiet-sp/update?id=${chiTietSP.id}" method="post" class="container">
     <div class="row">
         <div class="col-12">
             <label class="form-label select-label">San Pham</label>
             <select class="select form-control-lg" name="sap">
                 <jsp:useBean id="sanPhamArrayList" scope="request" type="java.util.List"/>
                 <c:forEach items="${sanPhamArrayList}" var="sap">
-                    <option value="${sap.id}">${sap.ten}</option>
+                    <option value="${sap.id}" ${sap.id == chiTietSP.sanPham.id ? 'selected ="selected"': ''}>${sap.ten}</option>
                 </c:forEach>
             </select>
-            <br>
-            <br>
+
+
+        </div>
+        <div class="col-12">
             <label class="form-label select-label">NSX</label>
             <select class="select form-control-lg" name="nsx">
                 <jsp:useBean id="nsxArrayList" scope="request" type="java.util.List"/>
                 <c:forEach items="${nsxArrayList}" var="nsx">
-                    <option value="${nsx.id}">${nsx.ten}</option>
+                    <option value="${nsx.id}" ${nsx.id == chiTietSP.nsx.id ? 'selected ="selected"': ''}>${nsx.ten}</option>
                 </c:forEach>
             </select>
-            <br>
-            <br>
+
+
+        </div>
+        <div class="col-12">
             <label class="form-label select-label">Mau Sac</label>
             <select class="select form-control-lg" name="ms">
                 <jsp:useBean id="mauSacArrayList" scope="request" type="java.util.List"/>
                 <c:forEach items="${mauSacArrayList}" var="ms">
-                    <option value="${ms.id}">${ms.ten}</option>
+                    <option value="${ms.id}" ${ms.id == chiTietSP.mauSac.id ? 'selected ="selected"': ''}>${ms.ten}</option>
                 </c:forEach>
             </select>
-            <br>
-            <br>
+
+
+        </div>
+        <div class="col-12">
             <label class="form-label select-label">Dong SP</label>
             <select class="select form-control-lg" name="dongSP">
                 <jsp:useBean id="dongSPArrayList" scope="request" type="java.util.List"/>
                 <c:forEach items="${dongSPArrayList}" var="dongSP">
-                    <option value="${dongSP.id}">${dongSP.ten}</option>
+                    <option value="${dongSP.id}" ${dongSP.id == chiTietSP.dongSP.id ? 'selected ="selected"': ''}>${dongSP.ten}</option>
                 </c:forEach>
             </select>
-            <br>
-            <br>
-        </div>
-
-        <div class="col-12">
-
-
-
-        </div>
-        <div class="col-12">
-
-
-
-        </div>
-        <div class="col-12">
-
 
 
         </div>
@@ -75,7 +69,7 @@
         <div class="col-md-6 mb-4">
 
             <div class="form-outline">
-                <input type="text" class="form-control form-control-lg" name="namBH"/>
+                <input value="${chiTietSP.nambh}" type="text" class="form-control form-control-lg" name="namBH"/>
                 <label class="form-label">Nam Ban Hang</label>
             </div>
 
@@ -83,7 +77,7 @@
         <div class="col-md-6 mb-4">
 
             <div class="form-outline">
-                <input type="text" class="form-control form-control-lg" name="moTa"/>
+                <input value="${chiTietSP.mota}" type="text" class="form-control form-control-lg" name="moTa"/>
                 <label class="form-label">Mo Ta</label>
             </div>
 
@@ -92,7 +86,7 @@
         <div class="col-md-6 mb-4">
 
             <div class="form-outline">
-                <input type="text" class="form-control form-control-lg" name="soLuongTon"/>
+                <input value="${chiTietSP.soLuongTon}" type="text" class="form-control form-control-lg" name="soLuongTon"/>
                 <label class="form-label">So Luong Ton</label>
             </div>
 
@@ -101,7 +95,7 @@
         <div class="col-md-6 mb-4">
 
             <div class="form-outline">
-                <input type="text" class="form-control form-control-lg" name="giaNhap"/>
+                <input value="${chiTietSP.gianhap}" type="text" class="form-control form-control-lg" name="giaNhap"/>
                 <label class="form-label">Gia Nhap</label>
             </div>
 
@@ -110,7 +104,7 @@
         <div class="col-md-6 mb-4">
 
             <div class="form-outline">
-                <input type="text" class="form-control form-control-lg" name="giaBan"/>
+                <input value="${chiTietSP.giaban}" type="text" class="form-control form-control-lg" name="giaBan"/>
                 <label class="form-label">Gia Ban</label>
             </div>
 
@@ -120,43 +114,5 @@
         </div>
     </div>
 </form>>
-
-
-    <table class="table">
-    <thead>
-    <tr>
-        <td>Id</td>
-        <td>SP</td>
-        <td>NSX</td>
-        <td>Mau Sac</td>
-        <td>Dong SP</td>
-        <td>Nam BH</td>
-        <td>Mo Ta</td>
-        <td>So luong ton</td>
-        <td>Gia Nhap</td>
-        <td>Gia Ban</td>
-    </tr>
-    </thead>
-    <tbody>
-    <jsp:useBean id="chiTietSPArrayList" scope="request" type="java.util.List"/>
-    <c:forEach items="${chiTietSPArrayList}" var="ct">
-        <tr>
-            <td>${ct.id}</td>
-            <td>${ct.sanPham.ten}</td>
-            <td>${ct.nsx.ten}</td>
-            <td>${ct.mauSac.ten}</td>
-            <td>${ct.dongSP.ten}</td>
-            <td>${ct.nambh}</td>
-            <td>${ct.mota}</td>
-            <td>${ct.soLuongTon}</td>
-            <td>${ct.gianhap}</td>
-            <td>${ct.giaban}</td>
-
-            <td><a href="${pageContext.request.contextPath}/chi-tiet-sp/delete?id=${ct.id}">Xoa</a>
-                <a href="${pageContext.request.contextPath}/chi-tiet-sp/detail?id=${ct.id}">Detail</a></td>
-        </tr>
-    </c:forEach>
-    </tbody>
-    </table>
 </body>
 </html>

@@ -34,5 +34,8 @@
 <br>
 <br>
 <a href="nhan-vien/hien-thi">Nhan Vien</a>
+<br>
+<br>
+<a href="chi-tiet-sp/hien-thi">Chi tiet san pham</a>
 </body>
 </html>
