@@ -44,7 +44,7 @@ public class ChiTietSP {
      *
      */
     @Column(name = "namBH")
-    private String nambh;
+    private Integer nambh;
     /**
      *
      */
@@ -60,7 +60,7 @@ public class ChiTietSP {
      *
      */
     @Column(name = "GiaNhap")
-    private Double gianhap;
+    private Integer gianhap;
     /**
      *
      */
@@ -68,20 +68,9 @@ public class ChiTietSP {
     private Integer soLuongTon;
 
     @Column(name = "GiaBan")
-    private Double giaban;
+    private Integer giaban;
 
     public ChiTietSP() {
     }
 
-    public ChiTietSP(SanPham sanPham, MauSac mauSac, DongSP dongSP, String nambh, String mota, NSX nsx, Double gianhap, Integer soLuongTon, Double giaban) {
-        this.sanPham = sanPham;
-        this.mauSac = mauSac;
-        this.dongSP = dongSP;
-        this.nambh = nambh;
-        this.mota = mota;
-        this.nsx = nsx;
-        this.gianhap = gianhap;
-        this.soLuongTon = soLuongTon;
-        this.giaban = giaban;
-    }
 }

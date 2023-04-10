@@ -68,8 +68,8 @@
             <td>${ch.id}</td>
             <td>${ch.ma}</td>
             <td>${ch.ten}</td>
-            <td>${ch.diachi}</td>
-            <td>${ch.thanhpho}</td>
+            <td>${ch.diaChi}</td>
+            <td>${ch.thanhPho}</td>
             <td>${ch.quocGia}</td>
             <td><a href="/cua-hang/delete?id=${ch.id}">Xoa</a>
                 <a href="/cua-hang/detail?id=${ch.id}">Detail</a></td>

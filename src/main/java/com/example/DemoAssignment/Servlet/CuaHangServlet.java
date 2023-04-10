@@ -25,7 +25,7 @@ public class CuaHangServlet extends HttpServlet {
         String uri = request.getRequestURI();
         if (uri.contains("/cua-hang/hien-thi")) {
             ArrayList<CuaHang> listCuaHang = cuaHangRepository.getAll();
-            request.setAttribute("ListCuaHang", listCuaHang);
+            request.setAttribute("listCuaHang", listCuaHang);
             request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
         } else if ("/cua-hang/detail".equals(uri)) {
             UUID id = UUID.fromString(request.getParameter("id"));
@@ -37,10 +37,8 @@ public class CuaHangServlet extends HttpServlet {
             CuaHang cuaHang = cuaHangRepository.getById(id);
             cuaHangRepository.delete(cuaHang);
             ArrayList<CuaHang> listCuaHang = cuaHangRepository.getAll();
-            request.setAttribute("ListCuaHang", listCuaHang);
+            request.setAttribute("listCuaHang", listCuaHang);
             request.getRequestDispatcher("/view/CuaHangView.jsp").forward(request, response);
-        } else {
-            throw new IllegalStateException("Unexpected value: " + uri);
         }
     }
 

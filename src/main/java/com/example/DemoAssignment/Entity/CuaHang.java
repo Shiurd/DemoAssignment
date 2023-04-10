@@ -1,5 +1,6 @@
 package com.example.DemoAssignment.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.UUID;
 @Entity
 
 @Data
+@AllArgsConstructor
 public class CuaHang {
 
     @Id
@@ -41,18 +43,11 @@ public class CuaHang {
     @Column(name = "QuocGia")
     private String quocGia;
 
-    @OneToMany(mappedBy = "cuaHang", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cuaHang", fetch = FetchType.EAGER)
     private List<NhanVien> nhanVienList = new ArrayList<>();
 
     public CuaHang() {
     }
 
-    public CuaHang(UUID id, String ma, String ten, String diaChi, String thanhPho, String quocGia) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.diaChi = diaChi;
-        this.thanhPho = thanhPho;
-        this.quocGia = quocGia;
-    }
+
 }

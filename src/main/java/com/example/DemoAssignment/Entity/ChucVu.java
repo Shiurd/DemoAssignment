@@ -13,7 +13,7 @@ import java.util.UUID;
 @Entity
 
 @Data
-
+@AllArgsConstructor
 public class ChucVu {
 
     @Id
@@ -31,15 +31,9 @@ public class ChucVu {
     @Column(name = "Ten")
     private String ten;
 
-    @OneToMany(mappedBy = "chucVu",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "chucVu",fetch = FetchType.EAGER)
     private List<NhanVien> nhanVienList = new ArrayList<>();
 
     public ChucVu() {
-    }
-
-    public ChucVu(UUID id, String ma, String ten) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
     }
 }

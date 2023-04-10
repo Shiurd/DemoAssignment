@@ -31,7 +31,7 @@ public class NhanVien {
     private String ho;
 
     @Column(name = "GioiTinh")
-    private String gioiTinh;
+    private Boolean gioiTinh;
 
     @Column(name = "NgaySinh")
     private Date ngaySinh;

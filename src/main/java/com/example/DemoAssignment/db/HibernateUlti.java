@@ -26,8 +26,7 @@ public class HibernateUlti {
         conf.setProperties(properties);
         conf.addAnnotatedClass(KhachHang.class);
 
-        conf.addAnnotatedClass(ChucVu.class);
-        conf.addAnnotatedClass(CuaHang.class);
+
         conf.addAnnotatedClass(DongSP.class);
         conf.addAnnotatedClass(GioHang.class);
         conf.addAnnotatedClass(GioHangChiTiet.class);
@@ -35,6 +34,8 @@ public class HibernateUlti {
         conf.addAnnotatedClass(HoaDonChiTiet.class);
         conf.addAnnotatedClass(MauSac.class);
         conf.addAnnotatedClass(NhanVien.class);
+        conf.addAnnotatedClass(ChucVu.class);
+        conf.addAnnotatedClass(CuaHang.class);
         conf.addAnnotatedClass(NSX.class);
         conf.addAnnotatedClass(SanPham.class);
         conf.addAnnotatedClass(ChiTietSP.class);

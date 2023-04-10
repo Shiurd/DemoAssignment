@@ -7,6 +7,9 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
+import static javax.swing.text.html.HTML.Attribute.N;
 
 /**
  * @author Shiurd
@@ -62,5 +65,15 @@ public class NhanVienRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public NhanVien getById(UUID id){
+        NhanVien nhanVien = new NhanVien();
+        try(Session session = HibernateUlti.getFACTORY().openSession()){
+            nhanVien = session.get(NhanVien.class, id);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return nhanVien;
     }
 }
